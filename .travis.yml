@@ -10,5 +10,5 @@ before_install:
 script:
   - npm run build
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker build -t pea3nut/pxer:latest .
-  - docker push pea3nut/pxer:latest
+  - docker build -t izbk/pxer:latest .
+  - docker push izbk/pxer:latest
