@@ -1,13 +1,7 @@
-FROM node
-MAINTAINER pea3nut "626954412@qq.com"
+FROM nginx
 
-RUN mkdir /pxer
-COPY . /pxer/
-
-WORKDIR /pxer
-RUN rm -rf /pxer/node_modules
-RUN npm install --production
+COPY ./dist/ /usr/share/nginx/html/
+COPY ./vhost.nginx.conf /etc/nginx/conf.d/izbk.conf
 
 EXPOSE 80
 
-ENTRYPOINT ["npm","run","prod"]
